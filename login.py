@@ -1,7 +1,30 @@
-from flask import Flask, request, session, Response, url_for, redirect
+from flask import Flask, request, session, Response, url_for, redirect, render_template_string
 
 app = Flask(__name__)
 app.secret_key = "secret"  # required for session
+
+# HTML Login Page
+html = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+
+    <h2>Login Form</h2>
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Enter Username"><br><br>
+
+        <input type="password" name="password" placeholder="Enter Password"><br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+</html>
+"""
 
 @app.route("/", methods=["GET", "POST"])
 def login():
@@ -15,11 +38,13 @@ def login():
         else:
             return Response("invalid credentials. try again", mimetype="text/plain")
 
-    return "Login Page"
+    return render_template_string(html)
+
 
 @app.route("/welcome")
 def welcome():
     return "Welcome page"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
