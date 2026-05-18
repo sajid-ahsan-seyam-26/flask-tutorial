@@ -18,9 +18,9 @@ def login():
     }
 
     if username in valid_users and password == valid_users[username]:
-        return render_template("home.html", name=username)
+        return render_template("home.html", name=username, success=True)
     else:
-        return "invalid credentials"
+        return render_template("home.html", error="Invalid username or password")
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,36 +1,32 @@
 <!doctype html>
 <html>
   <head>
-    <title>Login Form</title>
+    <title>Login Page</title>
   </head>
 
   <body>
+    {% if success %}
+    <h1 style="color: green">Login Successful!</h1>
+    <h2>Welcome {{ name }}</h2>
+
+    {% else %}
     <h1>Login Form</h1>
+
+    {% if error %}
+    <h3 style="color: red">{{ error }}</h3>
+    {% endif %}
 
     <form method="POST" action="/submit">
       <label>Username:</label><br />
-      <input
-        type="text"
-        name="username"
-        placeholder="Enter username"
-        required
-      />
+      <input type="text" name="username" required />
       <br /><br />
 
       <label>Password:</label><br />
-      <input
-        type="password"
-        name="password"
-        placeholder="Enter password"
-        required
-      />
+      <input type="password" name="password" required />
       <br /><br />
 
       <button type="submit">Login</button>
     </form>
-
-    {% if name %}
-    <h2>Welcome {{ name }}</h2>
     {% endif %}
   </body>
 </html>
