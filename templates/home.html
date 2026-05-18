@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Login Form</title>
+  </head>
+  <body>
+    <h1>Login Form</h1>
+
+    <form method="POST" action="/submit">
+      <label>Username:</label><br />
+      <input type="text" name="username" placeholder="Enter username" />
+      <br /><br />
+
+      <label>Password:</label><br />
+      <input type="password" name="password" placeholder="Enter password" />
+      <br /><br />
+
+      <button type="submit">Login</button>
+    </form>
+
+    {% if name %}
+    <h2>Welcome {{ name }}</h2>
+    {% endif %}
+  </body>
+</html>
