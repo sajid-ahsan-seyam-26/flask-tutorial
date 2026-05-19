@@ -63,3 +63,46 @@ body {
   align-items: center;
   gap: 40px;
 }
+.welcome {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.hero-text h1 {
+  font-size: 58px;
+  color: #101828;
+  margin-bottom: 12px;
+}
+.button {
+  display: flex;
+  gap: 15px;
+}
+.btn {
+  padding: 14px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.primary {
+  background: #0966b8;
+  color: rgba(255, 255, 255, 0.972);
+}
+.secondary {
+  border: 1px solid #07349e;
+  color: #0966b8;
+  background: whitesmoke;
+}
+.profile-card {
+  background: linear-gradient(135deg, #07349e, #0966b8);
+  color: whitesmoke;
+  padding: 35px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(9, 102, 184, 0.25);
+}
+.avatar {
+  width: 145px;
+  height: 145px;
+  background: whitesmoke;
+  color: #07349e;
+}
