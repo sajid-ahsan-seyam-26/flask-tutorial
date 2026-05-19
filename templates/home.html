@@ -2,31 +2,41 @@
 <html>
   <head>
     <title>Login Page</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
   </head>
 
   <body>
-    {% if success %}
-    <h1 style="color: green">Login Successful!</h1>
-    <h2>Welcome {{ name }}</h2>
+    <div class="container">
+      {% if success %}
 
-    {% else %}
-    <h1>Login Form</h1>
+      <h1 class="success">Login Successful!</h1>
+      <h2>Welcome {{ name }}</h2>
 
-    {% if error %}
-    <h3 style="color: red">{{ error }}</h3>
-    {% endif %}
+      {% else %}
 
-    <form method="POST" action="/submit">
-      <label>Username:</label><br />
-      <input type="text" name="username" required />
-      <br /><br />
+      <h1>Login Form</h1>
 
-      <label>Password:</label><br />
-      <input type="password" name="password" required />
-      <br /><br />
+      {% if error %}
+      <h3 class="error">{{ error }}</h3>
+      {% endif %}
 
-      <button type="submit">Login</button>
-    </form>
-    {% endif %}
+      <form method="POST" action="/submit">
+        <label>Username:</label><br />
+        <input type="text" name="username" required />
+        <br /><br />
+
+        <label>Password:</label><br />
+        <input type="password" name="password" required />
+        <br /><br />
+
+        <button type="submit">Login</button>
+      </form>
+
+      {% endif %}
+    </div>
   </body>
 </html>
