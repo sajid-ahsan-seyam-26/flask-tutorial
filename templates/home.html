@@ -11,13 +11,6 @@
 
   <body>
     <div class="container">
-      {% if success %}
-
-      <h1 class="success">Login Successful!</h1>
-      <h2>Welcome {{ name }}</h2>
-
-      {% else %}
-
       <h1>Login Form</h1>
 
       {% if error %}
@@ -35,8 +28,6 @@
 
         <button type="submit">Login</button>
       </form>
-
-      {% endif %}
     </div>
   </body>
 </html>
